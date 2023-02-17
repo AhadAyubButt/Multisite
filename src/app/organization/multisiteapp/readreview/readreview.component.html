@@ -1,0 +1,145 @@
+<form [formGroup]="form" class="form-horizontal" action="" (window:beforeunload)="canDeactivate()">
+  <div class="main-content content">
+    <div class="page-content">
+      <div class="container-fluid">
+        <!-- start page title -->
+        <div class="row">
+          <div class="col-12">
+            <div
+              class="page-title-box d-flex align-items-center justify-content-between"
+            >
+              <h4 class="mb-0 font-size-18">Edit Review Page</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- end page title -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <div class='content'>
+                <h3 class="text-center" style="margin-top: 2rem">
+                  Review Information
+                </h3>
+                <p class="card-title-desc">Fill all information below</p>
+                <div class="form-group">
+                  <input
+                    id="reviewname"
+                    formControlName="reviewname"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Review Name"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    id="reviewnewurl"
+                    formControlName="reviewnewurl"
+                    name="reviewnewurl"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Review URL"
+                  />
+                </div>
+                <div class="form-group">
+                  <div
+                    id="sample2"
+                    [froalaEditor]="options"
+                    formControlName="reviewdescription"
+                  ></div>
+                </div>
+                <input
+                  style="margin: 10px 0"
+                  class="form-control mt-5"
+                  type="text"
+                  formControlName="bannerAltText"
+                  placeholder="Enter Alt Text for banner image"
+                />
+                <div
+                  class="custom-dropzone"
+                  ngx-dropzone
+                  [accept]="'image/*'"
+                  (change)="onSelect($event)"
+                >
+                  <ngx-dropzone-label>
+                    <div>
+                      <h2>Upload Images</h2>
+                    </div>
+                  </ngx-dropzone-label>
+                  <ngx-dropzone-image-preview
+                    ngProjectAs="ngx-dropzone-preview"
+                    *ngFor="let f of files"
+                    [file]="f"
+                    [removable]="true"
+                    (removed)="onRemove(f)"
+                  >
+                    <ngx-dropzone-label
+                    >{{ f.name }} ({{ f.type }})
+                    </ngx-dropzone-label>
+                  </ngx-dropzone-image-preview>
+                </div>
+                <h3 class='text-center'>Schema</h3>
+                <div class="form-group">
+                  <textarea
+                    class="form-control"
+                    formControlName="reviewschema"
+                    placeholder="Enter Review Schema"
+                    class="form-control"
+                    id="reviewschema"
+                    rows="5"
+                  ></textarea>
+                </div>
+                <!--note: META DATA-->
+                <h3 class="text-center">Meta Data</h3>
+                <div class="form-group">
+                  <input
+                    id="metatitle"
+                    name="productname"
+                    formControlName="reviewmetatitle"
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Meta Title"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="reviewmetakeywords"
+                    id="reviewmetakeywords"
+                    placeholder="Enter Meta Keywords"
+                  />
+                </div>
+                <div class="form-group">
+                  <textarea
+                    class="form-control"
+                    formControlName="reviewmetadescription"
+                    id="metadescription"
+                    rows="5"
+                    placeholder="Enter Meta Description"
+                  ></textarea>
+                </div>
+              </div>
+              <div class='row'>
+                <div class='col-12'>
+                  <button
+                    type='submit'
+                    class='btn btn-primary mr-1 waves-effect waves-light float-right'
+                    (click)='updateReview()'
+                  >
+                    Save Changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- datatable end -->
+    </div>
+    <!-- container-fluid -->
+    <!-- End Page-content -->
+  </div>
+</form>

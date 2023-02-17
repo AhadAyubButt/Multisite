@@ -1,0 +1,19 @@
+<!--src/app/components/logout-button/logout-button.component.html-->
+
+<!-- <button class="btn btn-danger btn-block" (click)="logout()">
+    Log out
+  </button> -->
+
+
+  <div class="d-flex">
+    <div class="dropdown d-inline-block">
+        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img class="rounded-circle header-profile-user" src="assets/images/avatar-male.png" alt="Header Avatar">
+        <span class="d-none d-xl-inline-block ml-1" key="t-henry">Admin</span>
+        <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item text-danger" href="#"  (click)="logout()"><i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i> <span key="t-logout">Log Out</span></a>
+        </div>
+    </div>
+  </div>

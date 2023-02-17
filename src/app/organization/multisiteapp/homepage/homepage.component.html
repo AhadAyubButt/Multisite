@@ -1,0 +1,64 @@
+<form [formGroup]="form" class="form-horizontal" action="">
+    <div class="main-content">
+        <div class="page-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box d-flex align-items-center justify-content-between">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Basic Information</h4>
+                                <p class="card-title-desc">Fill all information below</p>
+                                    <div class="row">
+
+                                        <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="HomePageNewUrl"> HomePageNewUrl</label>
+                                            <input type="text" class="form-control" formControlName="HomePageNewUrl" id="HomePageNewUrl" placeholder="Enter  HomePageNewUrl">
+                                        </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="HomePageOldUrl"> HomePageOldUrl</label>
+                                            <input type="text" class="form-control" formControlName="HomePageOldUrl" id="HomePageOldUrl" placeholder="Enter  HomePageOldUrl">
+                                        </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="HomePageMetaTitle"> HomePageMetaTitle</label>
+                                            <input type="text" class="form-control" formControlName="HomePageMetaTitle" id="HomePageMetaTitle" placeholder="Enter  HomePageMetaTitle">
+                                        </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="HomePageMetaKeywords"> HomePageMetaKeywords</label>
+                                            <input type="text" class="form-control" formControlName="HomePageMetaKeywords" id="HomePageMetaKeywords" placeholder="Enter  HomePageMetaKeywords">
+                                        </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="HomePageMetaDescription"> HomePageMetaDescription</label>
+                                                <textarea class="form-control" id="HomePageMetaDescription" rows="5" formControlName="HomePageMetaDescription" id="HomePageMetaDescription" placeholder="Enter  HomePageMetaDescription"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary mr-1 waves-effect waves-light" type="submit" (click)="createHomePage()">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,174 @@
+<div class="main-content" style="margin-top: 40px; padding: 30px">
+  <div class="page-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="mb-3" style="font-weight: 700">
+                Post on Social Media
+              </h3>
+              <div class="row">
+                <div class="col-9">
+                  <div class="form-check form-check-inline">
+                    <label for="check1" class="checkbox-inline">
+                      <input
+                        type="checkbox"
+                        value="Facebook"
+                        id="check1"
+                        (change)="print($event)"
+                      />
+                      <img src="../../../assets/images/facebook.svg" alt="" />
+                      <span>Facebook</span>
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <label class="checkbox-inline" for="check2">
+                      <input
+                        type="checkbox"
+                        value="Instagram"
+                        id="check2"
+                        (change)="print($event)"
+                      />
+                      <img src="../../../assets/images/instagram.svg" alt="" />
+                      <span>Instagram</span>
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <label class="checkbox-inline" for="check3">
+                      <input
+                        type="checkbox"
+                        value="Twitter"
+                        id="check3"
+                        (change)="print($event)"
+                      />
+                      <img src="../../../assets/images/twitter.svg" alt="" />
+                      <span>Twitter</span>
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <label class="checkbox-inline" for="check4">
+                      <input
+                        type="checkbox"
+                        value="Linkedin"
+                        id="check4"
+                        (change)="print($event)"
+                      />
+                      <img src="../../../assets/images/linkedin.svg" alt="" />
+                      <span>LinkedIn</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <select
+                    class="form-select form-control"
+                    aria-label="Default select example"
+                    [(ngModel)]="selectedValue"
+                    (change)="selectWebsite($event)"
+                    (ngModelChange)="selectWebsite($event)"
+                  >
+                    <option value="">Select Website</option>
+                    <option
+                      *ngFor="let website of websiteList"
+                      [ngValue]="website.WebsiteName"
+                      [selected]=""
+                    >
+                      {{ website.WebsiteName }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+                <div class="row">
+                  <form
+                    class="col-12"
+                    [formGroup]="form"
+                    (ngSubmit)="onSubmit()"
+                  >
+                    <p style="color: red">
+                      *Only .jpeg/.jpg formats are supported
+                    </p>
+                    <div
+                      class="custom-dropzone"
+                      style="margin-bottom: 20px"
+                      ngx-dropzone
+                      [accept]="'image/*'"
+                      (change)="onSelect($event)"
+                    >
+                      <ngx-dropzone-label>
+                        <div>
+                          <h2>Upload Images</h2>
+                        </div>
+                      </ngx-dropzone-label>
+                      <ngx-dropzone-image-preview
+                        ngProjectAs="ngx-dropzone-preview"
+                        *ngFor="let f of files"
+                        [file]="f"
+                        [removable]="true"
+                        (removed)="onRemove(f)"
+                      >
+                        <ngx-dropzone-label
+                          >{{ f.name }} ({{ f.type }})
+                        </ngx-dropzone-label>
+                      </ngx-dropzone-image-preview>
+                    </div>
+                    <textarea
+                      style="margin: 10px 0; height: 272px"
+                      id="search"
+                      [ngClass]="'form-control'"
+                      type="text"
+                      formControlName="caption"
+                      placeholder=" "
+                    >
+                    </textarea>
+                  </form>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <button
+                      type="submit"
+                      class="
+                        btn btn-secondary
+                        button
+                        mr-1
+                        float-right
+                        waves-effect waves-light
+                      "
+                      (click)="onCancel()"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="submit"
+                      class="
+                        btn btn-primary
+                        mr-1
+                        waves-effect waves-light
+                        float-right
+                      "
+                      (click)="onSubmit()"
+                    >
+                      Post
+                    </button>
+                    <div #status *ngIf="checkWebsites" style="display: none">
+                      <ul *ngFor="let m of checkWebsites; let i = index">
+                        <p>{{ m }}</p>
+                        <li class="div" [id]="[m]" style="list-style: none;">
+                          <div class="circle-loader"
+                          >
+                            <div
+                              class="checkmark-c draw"
+                            ></div
+                            >
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

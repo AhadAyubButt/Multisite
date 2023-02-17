@@ -1,0 +1,34 @@
+   <div class="main-content">
+      <div class="page-content">
+         <div class="container-fluid">
+          <!-- start page title -->
+          <div class="row">
+             <div class="col-12">
+                <div class="card">
+                   <div class="card-body">
+                      <h4 class="card-title">Web Pages List</h4>
+                      <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                         <thead>
+                            <tr>
+                               <th>Page Name</th>
+                               <th></th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                            <tr *ngFor="let page of pagesList; index as i; first as isFirst">
+                               <td>{{page.pagename}}</td>
+                               <td>
+                                  <!-- <button class="btn-view">View</button> -->
+                                  <button class="btn-edit" (click)="openPage(page.pagename)">Edit</button>
+                               </td>
+                            </tr>
+                         </tbody>
+                      </table>
+                   </div>
+                </div>
+             </div>
+             <!-- end col -->
+          </div>
+         </div>
+      </div>
+   </div>

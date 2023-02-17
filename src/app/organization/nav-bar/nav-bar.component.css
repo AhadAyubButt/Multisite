@@ -1,0 +1,27 @@
+img.appear[src^=https]{
+  animation: slidein 2s;
+}
+/*.disappear{*/
+/*  display: none;*/
+/*}*/
+.disappear{
+  opacity: 0;
+  pointer-events: none;
+  animation: slideout 0.5s;
+}
+@keyframes slidein {
+  0% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 100%;
+  }
+}
+@keyframes slideout {
+  0% {
+    opacity: 100%;
+  }
+  100%{
+    opacity: 0;
+  }
+}

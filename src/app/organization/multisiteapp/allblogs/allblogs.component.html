@@ -1,0 +1,83 @@
+<form [formGroup]="form" class="form-horizontal" action="">
+  <div class="main-content content">
+    <div class="page-content">
+      <div class="container-fluid">
+        <h5>Creat a new All Blogs Page</h5>
+
+        <div class="card">
+          <div class="card-body content">
+            <div class="row">
+              <div class="col-12">
+                <form
+                  [formGroup]="form"
+                  (ngSubmit)="createAllBlogs()"
+                  class="form-group"
+                >
+                  <input
+                    type="text"
+                    class="form-control mb-2"
+                    formControlName="AllBlogsNewUrl"
+                    id="AllBlogsNewUrl"
+                    placeholder="Enter  AllBlogsNewUrl"
+                  />
+                  <input
+                    type="text"
+                    class="form-control mb-2"
+                    formControlName="AllBlogsOldUrl"
+                    id="AllBlogsOldUrl"
+                    placeholder="Enter  AllBlogsOldUrl"
+                  />
+                  <input
+                    type="text"
+                    class="form-control mb-2"
+                    formControlName="AllBlogsPageName"
+                    id="AllBlogsPageName"
+                    placeholder="Enter  AllBlogsPageName"
+                  />
+                  <input
+                    type="text"
+                    class="form-control mb-2"
+                    formControlName="AllBlogsMetaTitle"
+                    id="AllBlogsMetaTitle"
+                    placeholder="Enter  AllBlogsMetaTitle"
+                  />
+                  <input
+                    type="text"
+                    class="form-control mb-2"
+                    formControlName="AllBlogsMetaKeywords"
+                    id="AllBlogsMetaKeywords"
+                    placeholder="Enter  AllBlogsMetaKeywords"
+                  />
+                  <textarea
+                    class="form-control mb-2"
+                    id="AllBlogsMetaDescription"
+                    rows="5"
+                    formControlName="AllBlogsMetaDescription"
+                    id="AllBlogsMetaDescription"
+                    placeholder="Enter  AllBlogsMetaDescription"
+                  ></textarea>
+                </form>
+
+                <div class="row">
+                  <div class="col-12"></div>
+                </div>
+                <button
+                  type="submit"
+                  class="
+                    btn btn-primary
+                    float-right
+                    mb-3
+                    waves-effect waves-light
+                  "
+                  (click)="createAllBlogs()"
+                >
+                  Save Changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

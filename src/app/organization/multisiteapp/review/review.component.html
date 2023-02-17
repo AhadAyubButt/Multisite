@@ -1,0 +1,166 @@
+<form [formGroup]="form" (window:beforeunload)="canDeactivate()">
+  <div class="main-content content">
+    <div class="page-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div
+              class="
+                page-title-box
+                d-flex
+                align-items-center
+                justify-content-between
+              "
+            >
+              <h4 class="mb-0 font-size-18">Add A New Review</h4>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body content">
+                <div class="">
+                  <!-- start page title -->
+                  <!-- end page title -->
+                  <h4 class="text-center">Basic Information</h4>
+                  <p>Fill all information below</p>
+                  <div class="form-group">
+                    <input
+                      id="reviewurl"
+                      formControlName="reviewurl"
+                      name="reviewurl"
+                      type="text"
+                      class="form-control"
+                      placeholder="Add URL"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      id="reviewname"
+                      formControlName="reviewname"
+                      type="text"
+                      class="form-control"
+                      placeholder="Add Name"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <textarea
+                      class="form-control"
+                      formControlName="reviewschema"
+                      placeholder="Enter Review Schema"
+                      class="form-control"
+                      id="reviewschema"
+                      rows="5"
+                    ></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <div
+                      id="sample2"
+                      [froalaEditor]="options"
+                      formControlName="reviewdescription"
+                    ></div>
+                  </div>
+                  <!-- end card-->
+                  <!-- <div class="card">
+             <div class="card-body">
+                <h4 class="card-title mb-3">Blog Images</h4>
+                   <div class="custom-dropzone" ngx-dropzone [accept]="'image/*'" (change)="onSelect($event)">
+                        <ngx-dropzone-label>
+                            <div>
+                                <h2>Upload Images</h2>
+                            </div>
+                        </ngx-dropzone-label>
+                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                        </ngx-dropzone-image-preview>
+                   </div>
+             </div>
+          </div> -->
+                  <h4 class="text-center">Review Banner Image</h4>
+                  <div
+                    class="custom-dropzone"
+                    ngx-dropzone
+                    [accept]="'image/*'"
+                    (change)="onSelect($event)"
+                  >
+                    <ngx-dropzone-label>
+                      <div>
+                        <h2>Upload Images</h2>
+                      </div>
+                    </ngx-dropzone-label>
+                    <ngx-dropzone-image-preview
+                      ngProjectAs="ngx-dropzone-preview"
+                      *ngFor="let f of files"
+                      [file]="f"
+                      [removable]="true"
+                      (removed)="onRemove(f)"
+                    >
+                      <ngx-dropzone-label
+                        >{{ f.name }} ({{ f.type }})
+                      </ngx-dropzone-label>
+                    </ngx-dropzone-image-preview>
+                  </div>
+
+                  <input
+                    style="margin: 10px 0"
+                    class="form-control"
+                    type="text"
+                    formControlName="bannerAltText"
+                    placeholder="Enter Alt Text for banner image"
+                  />
+                  <h4 class="text-center">Meta Data</h4>
+                  <p class="card-title-desc">Fill all information below</p>
+                  <div class="form-group">
+                    <label for="metatitle">Meta title</label>
+                    <input
+                      id="metatitle"
+                      name="productname"
+                      formControlName="reviewmetatitle"
+                      type="text"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="reviewmetakeywords">Meta Keywords</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="reviewmetakeywords"
+                      id="reviewmetakeywords"
+                      placeholder="Enter Meta Keywords"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="metadescription">Meta Description</label>
+                    <textarea
+                      class="form-control"
+                      formControlName="reviewmetadescription"
+                      placeholder="Enter Meta Description"
+                      class="form-control"
+                      id="metadescription"
+                      rows="5"
+                    ></textarea>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary mr-1 waves-effect waves-light float-right"
+                  (click)="createReview()"
+                >
+                  Save Changes
+                </button>
+                <!-- end row -->
+              </div>
+              <!-- container-fluid -->
+              <!-- End Page-content -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<!-- end main content-->

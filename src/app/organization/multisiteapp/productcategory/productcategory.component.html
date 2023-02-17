@@ -1,0 +1,108 @@
+<form [formGroup]="form" class="form-horizontal" action="">
+  <div class="main-content content">
+    <div class="page-content">
+      <div class="container-fluid">
+        <!-- start page title -->
+        <div class="row">
+          <div class="col-12">
+            <div
+              class="page-title-box d-flex align-items-center justify-content-between"
+            >
+              <h4 class="mb-0 font-size-18">Create Category</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- end page title -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="content">
+                <h3 class="text-center" style="margin-top: 2rem">
+                  Category Information
+                </h3>
+                <p class="card-title-desc">Fill all information below</p>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="PCNewURL"
+                    id="productcategoryNewUrl"
+                    placeholder='Enter New URL'
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="PCOldUrl"
+                    id="productcategoryOldUrl"
+                    placeholder='Enter Old URL'
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="PCName"
+                    id="productcategoryname"
+                    placeholder='Enter Category Name'
+                  />
+                </div>
+
+                <div class="form-group">
+                  <textarea
+                    class='form-control'
+                    type='text'
+                    formControlName="PCMetaDataTitle"
+                    id="productcategorymetatitle"
+                    placeholder='Enter Meta Title'
+                  >
+                  </textarea>
+                </div>
+
+                <!--note: META DATA-->
+                <h3 class="text-center">Meta Data</h3>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="PCMetaDataKeywords"
+                    id="productcategorymetakeywords"
+                    placeholder='Enter Meta Data'
+                  />
+                </div>
+                <div class="form-group">
+                  <textarea
+                    class="form-control"
+                    formControlName="PCMetaDataDescription"
+                    id="productcategorymetadescription"
+                    class="form-control"
+                    id="metadescription"
+                    placeholder='Enter Meta Description'
+                  ></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <button
+                    type="submit"
+                    class="btn btn-primary mr-1 waves-effect waves-light float-right"
+                    (click)="createProductCategory()"
+                  >
+                    Save Changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- datatable end -->
+  </div>
+  <!-- container-fluid -->
+  <!-- End Page-content -->
+</form>

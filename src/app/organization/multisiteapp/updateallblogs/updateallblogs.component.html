@@ -1,0 +1,65 @@
+<form [formGroup]="form" class="form-horizontal" action="">
+  <div class="main-content content">
+    <div class="page-content">
+      <div class="container-fluid">
+        <h4 class="card-title">Basic Information</h4>
+        <p class="card-title-desc">Fill all information below</p>
+        <div class="card">
+          <div class="card-body content">
+            <div class="row">
+
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="AllBlogsNewUrl"> AllBlogsNewUrl</label>
+                  <input type="text" class="form-control" formControlName="AllBlogsNewUrl" id="AllBlogsNewUrl"
+                         placeholder="Enter  AllBlogsNewUrl">
+                </div>
+
+
+                <div class="form-group">
+                  <label for="AllBlogsOldUrl"> AllBlogsOldUrl</label>
+                  <input type="text" class="form-control" formControlName="AllBlogsOldUrl" id="AllBlogsOldUrl"
+                         placeholder="Enter  AllBlogsOldUrl">
+                </div>
+
+                <div class="form-group">
+                  <label for="AllBlogsPageName"> AllBlogsPageName</label>
+                  <input type="text" class="form-control" formControlName="AllBlogsPageName" id="AllBlogsPageName"
+                         placeholder="Enter  AllBlogsPageName">
+                </div>
+
+                <div class="form-group">
+                  <label for="AllBlogsMetaTitle"> AllBlogsMetaTitle</label>
+                  <input type="text" class="form-control" formControlName="AllBlogsMetaTitle" id="AllBlogsMetaTitle"
+                         placeholder="Enter  AllBlogsMetaTitle">
+                </div>
+
+                <div class="form-group">
+                  <label for="AllBlogsMetaKeywords"> AllBlogsMetaKeywords</label>
+                  <input type="text" class="form-control" formControlName="AllBlogsMetaKeywords"
+                         id="AllBlogsMetaKeywords" placeholder="Enter  AllBlogsMetaKeywords">
+                </div>
+
+                <div class="form-group">
+                  <label for="AllBlogsMetaDescription"> AllBlogsMetaDescription</label>
+                  <textarea class="form-control" id="AllBlogsMetaDescription" rows="5"
+                            formControlName="AllBlogsMetaDescription" id="AllBlogsMetaDescription"
+                            placeholder="Enter  AllBlogsMetaDescription"></textarea>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+
+          <button type="submit" class="btn float-right btn-primary mr-1 waves-effect waves-light" (click)="updateAllBlogs()">Save
+            Changes
+          </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

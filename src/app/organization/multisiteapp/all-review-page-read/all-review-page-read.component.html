@@ -1,0 +1,20 @@
+<div class="main-content content">
+  <div class="page-content">
+    <div class="card">
+      <div class="card-body content">
+        <div class="row">
+          <div class="col-12">
+            <form [formGroup]="form" class="form-group" (ngSubmit)="onSubmit()">
+              <input class="form-control mb-2" formControlName="AllReviewsPageName" placeholder="Review Title">
+              <input class="form-control mb-2" formControlName="AllReviewsNewUrl" placeholder="Review Url">
+              <input class="form-control mb-2" formControlName="AllReviewsMetaTitle" placeholder="Meta Title">
+              <input class="form-control mb-2" formControlName="AllReviewsMetaKeywords" placeholder="Meta Keywords">
+              <input class="form-control mb-2" formControlName="AllReviewsMetaDescription" placeholder="Meta Description">
+              <button class="btn btn-primary" type="submit"> Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

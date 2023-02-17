@@ -1,0 +1,72 @@
+<div class="main-content content">
+  <div class="page-content">
+    <div class="container-fluid">
+      <div class="card">
+              <h1 class="card-title" style="color: #133a61;">Contact Us</h1>
+        <div class="card-body">
+
+          <form action="" method="post">
+
+            <div class="row">
+              <div class="col-lg-6" style="border-radius: 11px 0px 0px 0px">
+                <div class="card border-0 shadow mb-3" style="background-color: #e3e7eb">
+                  <div class="card-body overlay">
+                    <label class="card-title">Name</label>
+                    <input class="card-text" placeholder="Enter Subject" style="background-color: #e3e7eb"
+                           [formControl]="name" >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6" style="border-radius: 11px 0px 0px 0px; align-items: end">
+                <div class="card border-0 shadow mb-3" style="background-color: #e3e7eb">
+                  <div class="card-body overlay">
+                    <label class="card-title">Email</label>
+                    <input class="card-text" placeholder="Enter Subject" style="background-color: #e3e7eb"
+                           [formControl]="email" >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12" style="border-radius: 11px 0px 0px 0px">
+                <div class="card border-0 shadow mb-3" style="background-color: #e3e7eb">
+                  <div class="card-body">
+                    <label class="card-title">Subject</label>
+                    <input class="card-text" placeholder="Enter Subject" style="background-color: #e3e7eb"
+                           [formControl]="subject" >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12" style="border-radius: 11px 0px 0px 0px">
+                <div class="card border-0 shadow mb-3" style="background-color: #e3e7eb">
+                  <div class="card-body">
+                    <label class="card-title">Message</label>
+                    <textarea
+                      name=""
+                      id=""
+                      rows="6"
+                      class="card-text w-100"
+                      placeholder="Enter your message"
+                      style="background-color: #e3e7eb"
+                      [formControl]="message"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <button type="submit" class="btn btn-primary float-end" style="margin: 5px 0px 10px 10px"
+                        (click)="onSubmit()">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

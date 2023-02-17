@@ -1,0 +1,176 @@
+<app-nav-bar></app-nav-bar>
+<div class="vertical-menu">
+  <div data-simplebar="init" class="h-100">
+    <div class="simplebar-wrapper" style="margin: 0">
+      <div class="simplebar-height-auto-observer-wrapper">
+        <div class="simplebar-height-auto-observer"></div>
+      </div>
+      <div class="simplebar-mask">
+        <div class="simplebar-offset" style="right: 0; bottom: 0">
+          <div
+            class="simplebar-content-wrapper"
+            style="height: 100%; overflow: hidden"
+          >
+            <div class="simplebar-content" style="padding: 0">
+              <!--- Sidemenu -->
+              <div id="sidebar-menu">
+                <!-- Left Menu Start -->
+                <ul class="metismenu list-unstyled" id="side-menu">
+                  <li class="menu-title" key="t-menu">Menu</li>
+                  <li>
+                    <a
+                      aria-expanded="false"
+                      routerLink="listWebsites"
+                      [routerLinkActive]="['active']"
+                      key="t-list-websites"
+                    >
+                      <img src="../../../assets/images/dashboard.png" />
+                      <span key="t-dashboards">Home</span></a
+                    >
+                  </li>
+                  <li class="">
+                    <a
+                      href="#multiCollapseExample29"
+                      role="button"
+                      data-toggle="collapse"
+                      aria-expanded="false"
+                      class="has-arrow waves-effect"
+                      [routerLinkActive]="['active']"
+                    >
+                      <img
+                        src="../../../assets/images/social-media (2).png"
+                        alt=""
+                      />
+
+                      <span key="t-ecommerce">Social Media</span>
+                    </a>
+                    <ul class="collapse" id="multiCollapseExample29" style="">
+                      <li>
+                        <a
+                          routerLink="social-media"
+                          key="t-add-product"
+                          [routerLinkActive]="['active']"
+                          >Add Post</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul id="click-menu" class="notselected metismenu list-unstyled">
+                  <div *ngIf="websiteSelected">
+                    <li class="">
+                      <a
+                        class="has-arrow waves-effect"
+                        href="#multiCollapseExample20"
+                        role="button"
+                        data-toggle="collapse"
+                        aria-expanded="false"
+                        aria-controls="multiCollapseExample20"
+                      >
+                        <img src="../../../assets/images/analytic.png" alt="" />
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 25.03" width='25' height='25'><defs><style>.cls-1{fill:#ffd664;}.cls-2{fill:#f70d29;}.cls-3{fill:#fff;}.cls-4{fill:#11b2ea;}</style></defs><g id="object"><rect class="cls-1" y="15.65" width="4.05" height="9.38" rx="0.02"/><rect class="cls-2" x="12.64" y="18.5" width="4.05" height="6.52" rx="0.02"/><rect class="cls-3" x="6.32" y="10.2" width="4.05" height="14.83" rx="0.02"/><rect class="cls-4" x="18.95" y="6.51" width="4.05" height="18.52" rx="0.02"/><path class="cls-4" d="M2.9,9.69a.1.1,0,0,1-.09,0,.12.12,0,0,1,0-.17l6.47-5.2,6.39,4.45L22,1a.12.12,0,0,1,.17,0,.12.12,0,0,1,0,.17L15.72,9.05,9.3,4.58,3,9.67Z" transform="translate(-1)"/><circle class="cls-3" cx="8.3" cy="4.43" r="1.1"/><circle class="cls-2" cx="14.7" cy="8.89" r="1.1"/><circle class="cls-4" cx="21.06" cy="1.1" r="1.1"/><circle class="cls-1" cx="1.9" cy="9.57" r="1.1"/></g></svg> -->
+                        <span key="t-ecommerce">Analytics</span>
+                      </a>
+                      <ul class="collapse" id="multiCollapseExample20">
+                        <li>
+                          <a
+                            [routerLinkActive]="['active']"
+                            routerLink="audience"
+                            >Audience Overview</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            [routerLinkActive]="['active']"
+                            routerLink="acquisition"
+                            >Acquisition Overview</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            [routerLinkActive]="['active']"
+                            routerLink="behavior"
+                            >Behavior Overview</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="">
+                      <a
+                        href="#multiCollapseExample3"
+                        role="button"
+                        data-toggle="collapse"
+                        aria-expanded="false"
+                        class="waves-effect"
+                        routerLink="listProducts"
+                        [routerLinkActive]="['active']"
+
+                      >
+                        <img src="../../../assets/images/cubes.png" />
+                        <span key="t-ecommerce">Products</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#multiCollapseExample9"
+                        role="button"
+                        data-toggle="collapse"
+                        aria-expanded="false"
+                        class="waves-effect"
+                        routerLink="listProductCategories"
+                        [routerLinkActive]="['active']"
+
+                      >
+                        <img
+                          src="../../../assets/images/categories.png"
+                          alt=""
+                        />
+                        <span key="t-ecommerce">Categories</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#multiCollapseExample1"
+                        role="button"
+                        data-toggle="collapse"
+                        class="waves-effect"
+                        aria-expanded="false"
+                        routerLink="listBlogs"
+                        [routerLinkActive]="['active']"
+
+                      >
+                        <img src="../../../assets/images/blog.png" alt="" />
+                        <span key="t-ecommerce">Blogs</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#multiCollapseExample33"
+                        role="button"
+                        data-toggle="collapse"
+                        class="waves-effect"
+                        routerLink="listReview"
+                        aria-expanded="false"
+                        [routerLinkActive]="['active']"
+
+                      >
+                        <img src="assets/images/review.png" alt="" />
+                        <span key="t-ecommerce">Reviews</span>
+                      </a>
+                    </li>
+                  </div>
+                </ul>
+              </div>
+              <!-- Sidebar -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="">
+  <router-outlet></router-outlet>
+</div>
+<!--</div>-->
+<!-- Left Sidebar End -->

@@ -1,0 +1,86 @@
+<form [formGroup]="form" class="form-horizontal" action="">
+  <div class="main-content content">
+    <div class="page-content">
+      <div class="container-fluid">
+          <h4 class="card-title">Basic Information</h4>
+          <p class="card-title-desc">Fill all information below</p>
+        <div class="card">
+          <div class="card-body content">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="AllProductsNewUrl"> AllProductsNewUrl</label>
+                  <input type="text" class="form-control" formControlName="AllProductsNewUrl" id="AllProductsNewUrl"
+                         placeholder="Enter  AllProductsNewUrl">
+                </div>
+
+                <div class="form-group">
+                  <label for="AllProductsOldUrl"> AllProductsOldUrl</label>
+                  <input type="text" class="form-control" formControlName="AllProductsOldUrl" id="AllProductsOldUrl"
+                         placeholder="Enter  AllProductsOldUrl">
+                </div>
+
+                <div class="form-group">
+                  <label for="AllProductsPageName"> AllProductsPageName</label>
+                  <input type="text" class="form-control" formControlName="AllProductsPageName" id="AllProductsPageName"
+                         placeholder="Enter  AllProductsPageName">
+                </div>
+
+                <div class="form-group">
+                  <label for="AllProductsMetaTitle"> AllProductsMetaTitle</label>
+                  <input type="text" class="form-control" formControlName="AllProductsMetaTitle"
+                         id="AllProductsMetaTitle" placeholder="Enter  AllProductsMetaTitle">
+                </div>
+
+                <div class="form-group">
+                  <label for="AllProductsMetaKeywords"> AllProductsMetaKeywords</label>
+                  <input type="text" class="form-control" formControlName="AllProductsMetaKeywords"
+                         id="AllProductsMetaKeywords" placeholder="Enter  AllProductsMetaKeywords">
+                </div>
+
+                <div class="form-group">
+                  <label for="AllProductsMetaDescription"> AllProductsMetaDescription</label>
+                  <textarea class="form-control" id="AllProductsMetaDescription" rows="5"
+                            formControlName="AllProductsMetaDescription" id="AllProductsMetaDescription"
+                            placeholder="Enter  AllProductsMetaDescription"></textarea>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <button type="submit" class="btn float-right btn-primary mr-1 waves-effect waves-light"
+                      (click)="updateAllProducts()">Save Changes
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="main-content content">
+    <div class="page-content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="page-title-box d-flex align-items-center justify-content-between">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,106 @@
+<div class="org-comp" #disp>
+<div class="container-fluid d-flex h-100">
+    <div class="row ">
+      <div class="col-lg-6" style="margin-top: -5px; align-self: center">
+        <div class="desc">
+          <img style="width: 75%" src="../../assets/images/Multi%20Site%20Login.svg">
+          <p>
+            Multisite is your one stop platform that helps you handle all your
+            websites in one place.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6 h-100 d-flex justify-content-center align-self-center align-items-center">
+        <div class="login login-1 d-flex flex-column flex-nowrap align-items-stretch justify-content-center">
+          <h2 style="text-align: center">Sign In</h2>
+          <form [formGroup]="form" (ngSubmit)="authorize();" method="post" class="login--form text-center">
+            <div class="login--form__input-area input-group">
+              <span class="input-group-addon"
+              ><span class="fa fa-user"></span
+              ></span>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Email"
+                id="email"
+                formControlName="username"
+                autocomplete="on"
+              />
+            </div>
+            <div class="login--form__input-area input-group">
+              <span class="input-group-addon"
+              ><span class="fa fa-lock"></span
+              ></span>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                id="password"
+                formControlName="password"
+                autocomplete="on"
+              />
+            </div>
+            <button
+              type="submit"
+              class="login--form__button btn btn-default"
+              id="btn-login">
+              Log In
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  <div class="login login-1">-->
+  <!--    <header class="login&#45;&#45;header text-center">-->
+  <!--      &lt;!&ndash;            <img src="https://tritechnologies.net/img/logo/footer-logo.png"/>&ndash;&gt;-->
+
+  <!--      &lt;!&ndash;            <span class="arrow-down login&#45;&#45;header__arrow"></span>&ndash;&gt;-->
+  <!--    </header>-->
+  <!--    <h2 style="text-align: center">Sign In</h2>-->
+  <!--    &lt;!&ndash;          <div id="error-message" class="alert alert-danger"></div>&ndash;&gt;-->
+
+  <!--    <form [formGroup]="form" class="login&#45;&#45;form">-->
+  <!--      <div class="login&#45;&#45;form__input-area input-group">-->
+  <!--        <span class="input-group-addon"><span class="fa fa-user"></span></span>-->
+  <!--        <input-->
+  <!--          type="email"-->
+  <!--          id="email"-->
+  <!--          class="form-control"-->
+  <!--          formControlName="username"-->
+  <!--          placeholder="Email"-->
+  <!--          autocomplete="on"-->
+  <!--        />-->
+  <!--      </div>-->
+  <!--      <div class="login&#45;&#45;form__input-area input-group">-->
+  <!--        <span class="input-group-addon"><span class="fa fa-lock"></span></span>-->
+  <!--        <input-->
+  <!--          type="password"-->
+  <!--          id="password"-->
+  <!--          class="form-control"-->
+  <!--          formControlName="password"-->
+  <!--          placeholder="Password"-->
+  <!--          autocomplete="on"-->
+  <!--        />-->
+  <!--      </div>-->
+  <!--      <div class="captcha-container form-group"></div>-->
+  <!--      <div class="row">-->
+  <!--        <div class="col-lg-12" style="text-align: center; margin-top: 70px">-->
+  <!--          <button-->
+  <!--            type="submit"-->
+  <!--            id="btn-login"-->
+  <!--            class="login&#45;&#45;form__button btn btn-default"-->
+  <!--            (click)="authorize()"-->
+  <!--          >-->
+  <!--            Log In-->
+  <!--          </button>-->
+  <!--          &lt;!&ndash;          <p class="login-360">Or log in using:<a href="#"><img&ndash;&gt;-->
+  <!--          &lt;!&ndash;            src="https://microsoft-ico.s3-us-west-2.amazonaws.com/iconfinder_microsoft_294669+(1).png"&ndash;&gt;-->
+  <!--          &lt;!&ndash;            alt="office 360"></a></p>&ndash;&gt;-->
+  <!--        </div>-->
+  <!--      </div>-->
+  <!--    </form>-->
+
+  <!--  </div>-->
+</div>
+<router-outlet></router-outlet>

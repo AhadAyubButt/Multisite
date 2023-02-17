@@ -1,0 +1,33 @@
+<!--note: new-->
+<div class='main-content select-website-page' style="margin-top: 5%">
+  <div class='page-content'>
+    <div class='container-fluid d-flex flex-column'>
+      <div class="row">
+        <div class="col-12">
+          <button class='btn btn-primary float-right' style='' routerLink='/multisite/createwebsite'><span>&#43;</span>New
+            Website
+          </button>
+        </div>
+      </div>
+      <h2>Select a Website</h2>
+      <div class='d-flex flex-row flex-wrap'>
+
+        <div class='card m-2' *ngFor='let website of websiteList; index as i; first as isFirst'
+             (click)='openWebsite(website)'>
+          <div class='card-body'>
+            <img [src]='website.websiteImageURL' alt='' class='d-block card-img'>
+            <div class='card-title' style='text-align: center;margin-bottom: 0;
+    padding: 20px;'>
+              <p>{{website.websiteName}}</p>
+            </div>
+          </div>
+
+          <!-- <div class="mt-4 text-center">
+             <h5 class="mb-3 text-truncate"></h5>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

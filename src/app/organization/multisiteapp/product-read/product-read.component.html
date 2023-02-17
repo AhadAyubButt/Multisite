@@ -1,0 +1,199 @@
+<form [formGroup]='form' class='form-horizontal' action='' (window:beforeunload)="canDeactivate()">
+  <div class='main-content content'>
+    <div class='page-content'>
+      <div class='container-fluid'>
+        <!-- start page title -->
+        <div class='row'>
+          <div class='col-12'>
+            <div
+              class='page-title-box d-flex align-items-center justify-content-between'
+            >
+              <h4 class='mb-0 font-size-18'>Add A New Product Page</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- end page title -->
+        <div class='row'>
+          <div class='col-12'>
+            <div class='card'>
+              <div class='card-body'>
+                <div class='content'>
+                  <h3 class='text-center' style='margin-top: 2rem'>
+                    Product Information
+                  </h3>
+                  <p class='card-title-desc'>Fill all information below</p>
+                  <div class='form-group'>
+                    <input
+                      type='text'
+                      class='form-control'
+                      formControlName='productname'
+                      id='ProductName'
+                      placeholder='Enter Product Name'
+                    />
+                  </div>
+                  <div class='form-group'>
+                    <input
+                      type='text'
+                      class='form-control'
+                      formControlName='productNewURL'
+                      id='ProductURL'
+                      placeholder='Enter Product URL'
+                    />
+                  </div>
+                  <div class='form-group'>
+                    <select
+                      formControlName='categoryName'
+                      class='form-control'
+                      (change)='changeCategory($event)'
+                    >
+                      <option value='' selected>Select Category:</option>
+                      <option
+                        *ngFor='let category of categories'
+                        [ngValue]='category.PCName'
+                        [selected]="product.ProductCategory==category.PCName"
+
+                      >
+                        {{ category.PCName }}
+                      </option>
+                    </select>
+                  </div>
+                  <div class='form-group'>
+                  <textarea
+                    class='form-control'
+                    id='productdesc'
+                    rows='5'
+                    formControlName='productshortdesc'
+                    placeholder='Enter Short Description'
+                  ></textarea>
+                  </div>
+                  <div class='form-group'>
+                    <div
+                      id='sample2'
+                      [froalaEditor]='options'
+                      formControlName='productdetaildesc'
+                    ></div>
+                  </div>
+                  <div
+                    class='custom-dropzone'
+                    ngx-dropzone
+                    [accept]="'image/*'"
+                    (change)='onSelect($event)'
+                  >
+                    <ngx-dropzone-label>
+                      <div>
+                        <p>Upload Images</p>
+                      </div>
+                    </ngx-dropzone-label>
+                    <ngx-dropzone-image-preview
+                      ngProjectAs='ngx-dropzone-preview'
+                      *ngFor='let f of files'
+                      [file]='f'
+                      [removable]='true'
+                      (removed)='onRemove(f)'
+                    >
+                      <ngx-dropzone-label
+                      >{{ f.name }} ({{ f.type }})
+                      </ngx-dropzone-label
+                      >
+                    </ngx-dropzone-image-preview>
+                  </div>
+
+                  <h4 class='text-center'>Add Alt Text For Product Images</h4>
+                  <div class='form-group'>
+                    <input id='productAltText1' formControlName='productAltText1' name='productAltText1' type='text'
+                           placeholder='Enter Alt Text Image 1' class='form-control mb-1'>
+                    <input id='productAltText2' formControlName='productAltText2' name='productAltText2' type='text'
+                           placeholder='Enter Alt Text Image 2' class='form-control  mb-1'>
+                    <input id='productAltText3' formControlName='productAltText3' name='productAltText3' type='text'
+                           placeholder='Enter Alt Text Image 3' class='form-control  mb-1'>
+
+                    <input id='productAltText4' formControlName='productAltText4' name='productAltText4' type='text'
+                           placeholder='Enter Alt Text Image 4' class='form-control  mb-1'>
+
+                    <input id='productAltText5' formControlName='productAltText5' name='productAltText5' type='text'
+                           placeholder='Enter Alt Text Image 5' class='form-control  mb-1'>
+                  </div>
+
+                  <h3 class='text-center'>Schema</h3>
+                  <div class='form-group'>
+                    <textarea
+                      class='form-control'
+                      formControlName='productschema'
+                      placeholder='Enter Product Schema'
+                      class='form-control'
+                      id='productschema'
+                      rows='5'
+                    ></textarea>
+                  </div>
+
+                  <h3 class='text-center'>Meta Data</h3>
+                  <div class='form-group'>
+                    <input
+                      type='text'
+                      class='form-control'
+                      formControlName='product_meta_title'
+                      id='product_meta_title'
+                      placeholder='Enter Product Meta Title'
+                    />
+                  </div>
+                  <div class='form-group'>
+                    <input
+                      type='text'
+                      class='form-control'
+                      formControlName='product_meta_keyword'
+                      id='product_meta_keyword'
+                      placeholder='Enter Product Meta Keyword'
+                    />
+                  </div>
+                  <div class='form-group'>
+                  <textarea
+                    class='form-control'
+                    id='metadescription'
+                    formControlName='product_meta_description'
+                    rows='5'
+                  ></textarea>
+                  </div>
+                  <div class='card'>
+                    <div class='card-body'>
+                      <table class='table table-striped table-bordered table-sm row-border hover datatable' datatable
+                             >
+                        <thead>
+                        <tr>
+                          <th>Related Image</th>
+                          <th>Product Name</th>
+                          <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor='let group of data'>
+                          <td><img [src]='group.ProductImageURL1' alt='' class='img-fluid d-block' style='width:90px;'></td>
+                          <td>{{group.ProductName}}</td>
+                          <td>
+                            <button *ngIf='!isRelatedProduct(group)' class='btn btn-primary'
+                                    (click)='addRelatedProduct(group)'>
+                              Add
+                            </button>
+                            <button *ngIf='isRelatedProduct(group)' class='btn btn-danger'
+                                    (click)='removeRelatedProduct(group)'>
+                              Remove
+                            </button>
+                          </td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <button type='submit' class='btn btn-primary mr-1 waves-effect waves-light float-right'
+                        (click)='updateProduct()'>Save
+                  Changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

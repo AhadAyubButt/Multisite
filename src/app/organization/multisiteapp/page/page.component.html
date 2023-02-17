@@ -1,0 +1,141 @@
+<div class="main-content">
+    <div class="page-content">
+       <div class="container-fluid">
+          <!-- start page title -->
+          <div class="row">
+             <div class="col-12">
+                <div class="page-title-box d-flex align-items-center justify-content-between">
+                   <h4 class="mb-0 font-size-18">Edit Pages</h4>
+                </div>
+             </div>
+          </div>
+          <!-- end page title -->
+          <div class="row">
+             <div class="col-lg-12">
+                <div class="card">
+                   <div class="card-body">
+                      <h4 class="card-title">Basic Information</h4>
+                      <p class="card-title-desc">Fill all information below</p>
+                      <form [formGroup]="form" class="form-horizontal" action="">
+                         <div class="row">
+                            <div class="col-lg-6">
+                               <div class="form-group">
+                                  <label for="URL">Add URL</label>
+                                  <input type="text" class="form-control" formControlName="pageNewUrl" id="pageNewUrl" placeholder="Enter new Page URL">
+                               </div>
+                            </div>
+                            <div class="col-lg-6">
+                               <div class="form-group">
+                                  <label for="URL">Page Name</label>
+                                  <input type="text" class="form-control" formControlName="pagename" id="pagename" placeholder="Enter Page Name">
+                               </div>
+                            </div>
+                            <div class="col-lg-12">
+                               <div class="form-group">
+                                  <label>Page Description</label>
+                                  <div class="NgxEditor__Wrapper">
+                                     <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+                                        <ngx-editor
+                                           [editor]="editor"
+                                           formControlName="pagedescription"
+                                           name="pagedescription"
+                                     ></ngx-editor>
+                                  </div>
+                               </div>
+                            </div>
+                            <div class="col-lg-12">
+                               <h4 class="card-title">Meta Data</h4>
+                               <p class="card-title-desc">Fill all information below</p>
+                            </div>
+                            <div class="col-lg-6">
+                               <div class="form-group">
+                                  <label for="URL">Page Meta Title</label>
+                                  <input type="text" class="form-control" formControlName="pagemetatitle" id="pagemetatitle" placeholder="Enter Page Meta Title">
+                               </div>
+                      
+                               <div class="form-group">
+                                  <label for="URL">Page Meta Keywords</label>
+                                  <input type="text" class="form-control" formControlName="pagemetakeywords" id="pagemetakeywords" placeholder="Enter Page Meta Keywords">
+                               </div>
+                            </div>
+                            <div class="col-lg-6">
+                               <div class="form-group">
+                                  <label for="URL">Page Meta Description</label>
+                                  <textarea class="form-control" formControlName="pagemetadescription" id="pagemetadescription" placeholder="Enter Page Meta Description" class="form-control" id="metadescription" rows="5"></textarea>
+                               </div>
+                            </div>
+                            <div class="mt-3">
+             <button class="btn btn-primary btn-block waves-effect waves-light" type="submit" (click)="createPage()">Save Changes</button>
+          </div>
+                         </div>
+                      </form>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!-- 
+ <div class="main-content">
+    <div class="page-content">
+          <form [formGroup]="form" class="form-horizontal" action="">
+ 
+          <div class="form-group">
+             <label for="URL">Add URL</label>
+             <input type="text" class="form-control" formControlName="pageurl" id="pageurl" placeholder="Enter Page URL">
+          </div>
+ 
+          <div class="form-group">
+             <label for="URL">Page Name</label>
+             <input type="text" class="form-control" formControlName="pagename" id="pagename" placeholder="Enter Page Name">
+          </div>
+ 
+          <div class="form-group">
+             <label for="URL">Page Description</label>
+             <input type="text" class="form-control" formControlName="pagedescription" id="pagedescription" placeholder="Page Description">
+          </div>
+ 
+          <div class="form-group">
+             <label for="URL">Page Meta Title</label>
+             <input type="text" class="form-control" formControlName="pagemetatitle" id="pagemetatitle" placeholder="Enter Page Meta Title">
+          </div>
+ 
+          <div class="form-group">
+             <label for="URL">Page Meta Keywords</label>
+             <input type="text" class="form-control" formControlName="pagemetakeywords" id="pagemetakeywords" placeholder="Enter Page Meta Keywords">
+          </div>
+ 
+          <div class="form-group">
+             <label for="URL">Page Meta Keywords</label>
+             <textarea class="form-control" formControlName="pagemetadescription" id="pagemetadescription" placeholder="Enter Page Meta Description" class="form-control" id="metadescription" rows="5"></textarea>
+          </div>
+ 
+ 
+           Blog Images are to be included -->
+          <!-- Blog description is to be included -->
+ 
+          <!-- <div class="mt-3">
+             <button class="btn btn-primary btn-block waves-effect waves-light" type="submit" (click)="createPage()">Save Changes</button>
+          </div> -->
+ <!-- 
+       </form>
+ </div>
+ </div> --> 

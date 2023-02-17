@@ -1,0 +1,30 @@
+.simplebar-content-wrapper {
+  background-color: rgb(23 64 103);
+}
+
+#sidebar-menu ul li a {
+  color: white;
+}
+.active {
+  background-color: #f0f4f8;
+  color: black!important;
+}
+
+.menu-title {
+  color: white;
+}
+
+ul#click-menu.notselected {
+  opacity: 0%;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+
+ul#click-menu.selected {
+  opacity: 100%;
+  transition: opacity 2s;
+}
+
+/*ul#click-menu:hover{*/
+/*  opacity: 100%;*/
+/*}*/
